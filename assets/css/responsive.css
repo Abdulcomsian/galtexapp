@@ -1,0 +1,320 @@
+
+@media(min-width: 992px){
+	.nav_right .list-inline-item:hover .dropdown-hover{
+		display: block;
+	}
+}
+@media (max-width: 1199px){
+
+	.watermark_text .watermark{
+		font-size: 54px;
+	}
+}
+@media (max-width: 991px){
+	.ftr_main_block{
+		padding-bottom: 30px;
+	}
+	
+	.hdr_main .container{
+		position: relative;
+	}
+	.navbar-toggler{
+		padding: 0px;
+		background: transparent;	
+		position: absolute;
+		right: 0;
+		top: 7px;
+		border: none;
+		outline: none !important;
+	}
+	ul.nav_right{
+		padding-left: 0px;
+		padding-right: 40px;
+	}
+	.hdr_main .navbar-collapse {
+	    position: fixed;
+	    left: -272px;
+	    top: 0;
+	    height: 100%;
+	    height: 100vh;
+	    display: block !important;
+	    z-index: 9999;
+	    width: 270px;
+	    background: #fff;
+	    transition: all .3s linear;
+	    -webkit-transition: all .3s linear;
+	    box-shadow:  0 0 5px rgba(0,0,0,0.5);
+	}
+	.hdr_main .navbar-collapse.show {
+	    left: 0;
+	}
+	/*.mobile_toggle_area {
+	    position: fixed;
+	    z-index: 999;
+	    left: 0;
+	    top: 0;
+	    height: 100%;
+	    width: 100%;
+	    background: rgba(255,255,255,.7);
+	}
+	.navbar-collapse.collapse.show ~ .mobile_toggle_area {
+	    display: block;
+	}*/
+	.hdr_main .navbar-toggler{
+		padding: 0;
+	    border: none;
+	    position: absolute;
+	    right: 0px;
+	    top: 50%;
+	    transform: translate(0, -50%);
+	    -webkit-transform: translate(0, -50%);
+	    height: 18px;
+	}
+	.hdr_main .navbar-toggler:before, .hdr_main .navbar-toggler:after{
+		background: #5e3376;
+	    height: 2px;
+	    width: 24px;
+	    content: "";
+	    position: absolute;
+	    left: 0;
+	    transition: all .2s linear;
+	    -webkit-transition: all .2s linear;
+	    transform-origin: left center; 
+	}
+	.hdr_main .navbar-toggler:before{
+		top: 0;
+	}
+	.hdr_main .navbar-toggler:after{
+		bottom:  0;
+	}
+	.hdr_main .navbar-toggler[aria-expanded="true"]:before,
+	.hdr_main .navbar-toggler[aria-expanded="true"]:after{
+		transform: rotate(43deg);
+	}
+	.hdr_main .navbar-toggler[aria-expanded="true"]:after{
+		transform: rotate(-43deg);	
+	}
+	.hdr_main .navbar-toggler-icon {
+	    background: #5e3376;
+	    height: 2px;
+	    width: 24px;
+	    margin-top: -6px;
+	}
+	.hdr_main .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon{
+		background: transparent;
+	}
+	.navbar-nav li.has_dd .dd_arrow {
+        position: absolute;
+	    top: 5px;
+	    right: 10px;
+	    transition: none;
+	    width: 30px;
+	    height: 30px;
+	    text-align: center;
+	    line-height: 30px;
+	    font-size: 18px;
+	}
+	.navbar-nav .has_dd .sub_menu {
+	    opacity: 1;
+	    visibility: visible;
+	    position: static;
+	    box-shadow: none;
+	    transition: none;
+	    margin-left: 10px;
+	    display: none;
+	    margin-top: 0px !important
+	}
+	.watermark_text .watermark{
+		font-size: 30px;
+		/*white-space: nowrap;*/
+		letter-spacing: 0;
+		line-height: normal;
+	}
+	.innerbanner_cap h1{
+		font-size: 18px;
+	}
+	.inner_banner_sec{
+		min-height: 150px;
+	}
+	.form-control.change-language{
+		margin: 0 10px;
+	}
+
+	html[dir="rtl"] .hdr_main .navbar-toggler{
+		right: inherit;
+		left: 0;
+	}
+	html[dir="rtl"] ul.nav_right {
+	    padding-left: 40px;
+	    padding-right: 0px;
+	}
+	html[dir="rtl"] .hdr_main .navbar-collapse{
+		left: inherit;
+		right: -272px;
+	}
+	html[dir="rtl"] .hdr_main .navbar-collapse.show {
+	    left: inherit;
+	    right: 0;
+	}
+}
+
+@media (max-width: 767px){
+	.ftr_main_block .menu_list li a{
+		font-size: 13px;
+	}
+	.ftr_main_block .ftr_title{
+		font-size: 16px;
+	}
+	.hdr_left_block li a{
+		font-size: 0px;
+	}
+	.hdr_left_block li a svg{
+		font-size: 16px;
+	}
+	.login-rigth-image{
+	    order: 0;
+	}
+	.login-rigth-image{
+		min-height: 250px;
+	}
+	.login-form{
+		max-width: 90%;
+		margin: 40px auto;
+	}
+	.login-form .card-body {
+	    padding: 30px;
+	}
+	.hdrbudget{
+		font-size: 14px;
+	}
+	.profile_main .nav-tabs{
+		float: none;
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 20px !important;
+	}
+	.profile_main .tab-content{
+		float: none;
+		width: 100%;
+	}
+	.product_right .product_name {
+		padding-top: 20px;
+		font-size: 22px;
+	}
+	.single_product_page .product_price{
+		font-size: 18px;
+	}
+	.single_slider_main .product_slider_main {
+		pointer-events: none;
+	}
+	.singleprod-devider{
+		margin: 40px 0;
+	}
+	.pagehead_cmn{
+		font-size: 22px;
+	}
+	.checkout_btm{
+		margin-bottom: 0;
+		margin-top: 30px;
+	}
+	.cart_table thead{
+		display: none;
+	}
+	.cart_table tr {
+	    display: block;
+	    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+	    margin-bottom: 15px;
+	    position: relative;
+	}
+	.cart_table tr:last-child{
+		margin-bottom: 0px;
+	}
+	.cart_table tr td, .cart_table tr th {
+	    display: block;
+	    text-align: center;
+	    border: none;
+	    padding: 10px 15px;
+	}
+	.cart_table tr td img{
+		width: 180px;
+	}
+	.cart_table td.qty, .cart_table th.qty{
+		max-width: inherit;
+	}
+	.cart_table .form-control{
+		display: inline-block;
+	}
+	.cart_table tr td{
+		text-align: center !important;
+	}
+	.cart_table tr td:before{
+		content:attr(data-title);
+		font-weight: 500;
+		padding-right: 10px;
+	}
+	.cart_table tr td:first-child:before,
+	.cart_table tr td:nth-child(2):before{
+		display: none;
+	}
+	.pro_pera{
+		margin-bottom: 0;
+	}
+	.cart_table tr td.remove_cart_item {
+	    position: absolute;
+	    right: 10px;
+	    top: 10px;
+	    min-width: inherit;
+	    padding: 0px;
+	}
+	.hover_box{
+		display: none;
+	}
+	.product_slider_list .prod_coll{
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	.product_slider_list.row{
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+	.slide_cap p{
+		display: none;
+	}
+	.bnr_head_1 {
+	    font-size: 20px;
+	}
+	.slide_cap{
+		padding-left: 30px;
+	}
+	.about_img{
+		margin-bottom: 20px;
+	}
+	.about_sec{
+		text-align: center;
+	}
+	.about_sec h2.head_common2:after{
+		right: 0;
+		margin: 0 auto;
+	}
+	.padd_cmn {
+	    padding: 30px 0;
+	}
+	.head_box h4{
+		font-size: 15px;
+	}
+	h2.head_common2{
+		font-size: 22px;
+	}
+	.our_packages_sec.padd_cmn{
+	    padding-bottom: 0px;
+	}
+	.category_list li{
+		width: 50%;
+	}
+}
+@media (min-width: 576px) and (max-width: 767px){
+	
+}
+@media (max-width: 575px){
+	
+}
