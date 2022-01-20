@@ -23,11 +23,18 @@
     height: 300px;
     display: grid;
     align-items: center;
-    justify-content: center;
 }
 
 .mainHeader h3 {
     color: #fff;
+    text-align: center;
+}
+.mainHeader img{
+    position: absolute;
+    right: 30px;
+    top: -15px;
+    display: none;
+
 }
 
 .form-control.change-language {

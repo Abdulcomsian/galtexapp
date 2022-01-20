@@ -52,7 +52,7 @@
                 <div class="container-fluid">
 
                 <div class="logo_main">
-                  <a href="<?php echo base_url(); ?>">  <img src="assets/images/logo.png" alt="logo" width="220"></a>
+                  <a href="<?php echo base_url(); ?>">  <img src="assets/images/headerLogo.png" alt="logo" width="38"></a>
                 </div>
                             
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -125,6 +125,7 @@
             <div class="row">
               <div class="col-12">
                   <h3>Login</h3>
+                  <img src="assets/images/headerLogo.png" alt="">
               </div>
             </div>
           </div>
