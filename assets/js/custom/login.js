@@ -251,3 +251,10 @@ $("#help-form").submit(function(event) {
 
 
 });
+
+
+$(".mobileHeader button").click(function(){
+  if($(".hdr_main .navbar-collapse").hasClass("show")){
+    $(".hdr_main .navbar-collapse").removeClass("show")
+  }
+})
