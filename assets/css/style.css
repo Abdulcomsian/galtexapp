@@ -59,6 +59,7 @@ input[type='radio']:checked:before {
 
 .mobileHeader {
     padding: 20px;
+    display: none;
 }
 
 .mobileHeader button {
@@ -75,6 +76,7 @@ input[type='radio']:checked:before {
     position: absolute;
     width: 100%;
     bottom: 20px;
+    display: none;
 }
 
 .socialMedia p {
