@@ -22,15 +22,16 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/nprogress.css">
     <link rel="stylesheet" href="assets/css/toastr.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title><?php echo SITE_NAME; ?> :: <?php echo $title; ?></title>
   </head>
   <body>
     
     <header class="header_sec">
-        <div class="hdr_top_bar">
-            <div class="container">
+        <!-- <div class="hdr_top_bar">
+            <div class="container-fluid">
                 <div class="row align-items-center">
-                    <div class="col-6">
+                    <div class="col-12">
                         <div class="hdr_left_block">
                             <ul>
                               <li>
@@ -45,28 +46,71 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="hdr_main">
             <nav class="navbar navbar-expand-lg">
-                <div class="container">
+                <div class="container-fluid">
 
                 <div class="logo_main">
                   <a href="<?php echo base_url(); ?>">  <img src="assets/images/logo.png" alt="logo" width="220"></a>
                 </div>
                             
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <img src="assets/images/menu.png" alt="">
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="mobileHeader">
+                      <div class="row">
+                        <div class="col-6"></div>
+                        <div class="col-6">
+                          <button>
+                          <i class="fa fa-times" aria-hidden="true"></i>
+
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                     <ul class="navbar-nav ml-auto">               
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo base_url(); ?>"><?php echo lang('home'); ?></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url(); ?>">Cart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url(); ?>">Personal Area</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url(); ?>">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url(); ?>">Contact Us</a>
                         </li>
                     </ul>
                     <select class="form-control change-language col-sm-2">
                         <option value="en" <?php if($this->session->userdata('language') == 'en') echo "selected"; ?>>English (EN)</option>
                         <option value="he" <?php if($this->session->userdata('language') == 'he') echo "selected"; ?>>Hebrew (HE)</option>
                     </select> 
+                    <div class="socialMedia">
+                      <p>Visit us on Social Media</p>
+                      <ul class="social_main list-unstyled mb-0">
+                            <li class="list-inline-item">
+                                <a href="javascript:void(0);" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            </li>
+                             <li class="list-inline-item">
+                                <a href="javascript:void(0);" target="_blank"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="javascript:void(0);" target="_blank"><i class="fab fa-google"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="javascript:void(0);" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="javascript:void(0);" target="_blank"><i class="fab fa-youtube"></i></a>
+                            </li>
+                        </ul>
+                    </div>
                   </div>
                   <div class="mobile_toggle_area"></div>
               </div>
@@ -76,12 +120,21 @@
 
     <main class="main_content">
       <div class="global-container">
+        <div class="mainHeader">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                  <h3>Login</h3>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="card login-form">
-          <div class="row">
-            <div class="login-rigth-image col-md-6" style="background-image: url(assets/images/login-right.jpg);">&nbsp;</div>
-          <div class="col-md-6">
+          <!-- <div class="row">
+            <div class="login-rigth-image col-md-6" style="background-image: url(assets/images/login-right.jpg);">&nbsp;</div> -->
+          <div class="col-md-12">
           <div class="card-body">
-            <h3 class="card-title text-center wow fadeInDown" data-wow-delay="0.2s"><?php echo lang('login'); ?></h3>
+            <!-- <h3 class="card-title text-center wow fadeInDown" data-wow-delay="0.2s"><?php echo lang('login'); ?></h3> -->
             <div class="card-text">
               <form method="post" id="login-form">
                 <div class="form-check form-check-inline">
@@ -164,19 +217,63 @@
         <section class="footer_top">
             <div class="container">
               <div class="row">
-                 <div class="col-12 col-md-3">
+                 <div class="col-6">
                     <div class="ftr_main_block">
                        <div class="ftr_logo">
                          <img src="assets/images/logo_white.png">
                        </div>
-                        <ul class="ftr_contact list-unstyled">  
+                        <!-- <ul class="ftr_contact list-unstyled">  
                             <li><span class="cont_icon"><i class="fas fa-map-marker-alt"></i></span> <?php echo lang('galtex_store_pvt_ltd'); ?></li>                    
                             <li><a href="tel:<?php echo CONTACT_PHONE; ?>"><span class="cont_icon"><i class="fas fa-phone-alt"></i></span> <?php echo CONTACT_PHONE; ?></a></li>                    
                             <li><a href="mailto:<?php echo CONTACT_EMAIL; ?>"><span class="cont_icon"><i class="far fa-envelope"></i></span> <?php echo CONTACT_EMAIL; ?></a></li>                  
+                        </ul> -->
+                    </div>
+                 </div>
+                 <div class="col-6">
+                 <div class="ftr_main_block">
+                       <!-- <h4 class="ftr_title"><?php echo lang('follow_us'); ?></h4> -->
+                        <ul class="social_main list-unstyled mb-0">
+                            <li class="list-inline-item">
+                                <a href="javascript:void(0);" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            </li>
+                             <li class="list-inline-item">
+                                <a href="javascript:void(0);" target="_blank"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="javascript:void(0);" target="_blank"><i class="fab fa-google"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="javascript:void(0);" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="javascript:void(0);" target="_blank"><i class="fab fa-youtube"></i></a>
+                            </li>
                         </ul>
                     </div>
                  </div>
-                 <div class="col-6 col-md-3">
+                 <div class="col-4">
+                    <div class="ftr_main_block">
+                       <h4 class="ftr_title">Menu</h4>
+                        <ul class="menu_list list-unstyled mb-0">
+                            <li>
+                               <a href="javascript:void(0);">Category</a>
+                            </li>
+                            <li>
+                               <a href="javascript:void(0);">Another Category</a>
+                            </li>
+                            <li>
+                               <a href="javascript:void(0);">Someother Category</a>
+                            </li>
+                            <li>
+                               <a href="javascript:void(0);">Privacy Policy</a>
+                            </li>
+                            <li>
+                               <a href="javascript:void(0);">New Category</a>
+                            </li>
+                        </ul>
+                    </div>
+                 </div>
+                 <div class="col-4">
                     <div class="ftr_main_block">
                        <h4 class="ftr_title"><?php echo lang('services'); ?></h4>
                         <ul class="menu_list list-unstyled mb-0">
@@ -195,7 +292,7 @@
                         </ul>
                     </div>
                  </div>
-                 <div class="col-6 col-md-3">
+                 <div class="col-4">
                     <div class="ftr_main_block">
                        <h4 class="ftr_title"><?php echo lang('my_account'); ?></h4>
                         <ul class="menu_list list-unstyled mb-0">
@@ -214,7 +311,7 @@
                         </ul>
                     </div>
                  </div>
-                 <div class="col-12 col-md-3">
+                 <!-- <div class="col-12 col-md-3">
                     <div class="ftr_main_block">
                        <h4 class="ftr_title"><?php echo lang('follow_us'); ?></h4>
                         <ul class="social_main list-unstyled mb-0">
@@ -235,7 +332,7 @@
                             </li>
                         </ul>
                     </div>
-                 </div>
+                 </div> -->
               </div>
             </div>
         </section>
