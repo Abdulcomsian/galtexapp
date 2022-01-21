@@ -1,3 +1,12 @@
+
+@font-face {
+    font-family: "Segeo-Bold";
+    src: url("../fonts/Segoe\ UI\ Bold.ttf");
+}
+@font-face {
+    font-family: "Segeo-Semi";
+    src: url("../fonts/Segoe\ UI.ttf");
+}
 .header_sec .hdr_main {
     background-color: #3d3c40;
 }
@@ -102,4 +111,183 @@ input[type='radio']:checked:before {
     border-radius: 50%;
     font-size: 12px;
     line-height: 18px;
+}
+.cardBlur{
+    position: relative;
+    padding: 20px;
+    border-radius: 0px;
+    overflow: hidden;
+}
+.cardBlur:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #d5cccc;
+    z-index: -1;
+    filter: blur(10px);
+    -moz-filter: blur(10px);
+    -webkit-filter: blur(10px);
+    -o-filter: blur(10px);
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+}
+#card{
+    padding: 20px;
+    background: #fff;
+    -webkit-box-shadow: 1px 2px 12px -4px #00000029;
+    box-shadow: 1px 2px 12px -4px #00000029;
+    border-radius: 10px;
+}
+#card .welcomeText p{
+    text-align: center;
+    padding: 20px;
+}
+#card .welcomeText p br{
+    display: none;
+}
+.prod_coll .proimage{
+    box-shadow: 0px 1px 5px 0px rgb(0 0 13 / 75%);
+    -webkit-box-shadow: 0px 1px 5px 0px rgb(0 0 13 / 7%);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,13,0.75);
+    padding: 20px;
+    border-radius: 8px;
+}
+.prod_coll .proimage .product_name{
+    height: 55px;
+}
+.proimage .product_name a{
+    font-family: Segeo-Bold;
+}
+.proimage .product_description p{
+    text-align: right;
+    font-family: Segeo-Semi;
+    margin-bottom: 5px;
+}
+.readMore{
+    text-align: left;
+}
+.readMore a{
+    color: black;
+    font-family: Segeo-Semi;
+}
+.content_main_sec{
+    padding: 0px 150px;
+}
+.pro_img_box .productPrice{
+    position: absolute;
+    bottom: -11px;
+    margin: 0px;
+    left: 35%;
+    z-index: 9999999999999;
+    background: #644fb0;
+    padding: 3px 10px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 12px;
+}
+.mobileHeader{
+    display: none;
+}
+.hdr_main .companyLogo{
+    position: absolute;
+    left: 45%;
+}
+.hdr_main .navbar li svg{
+    font-size: 22px;
+    color: #fff;
+}
+.hdr_main .navbar li a img{
+    width: 30px;
+}
+.hdr_main .navbar li a{
+    position: relative;
+    top: -5px;
+}
+.desktopHide{
+    display: none;
+}
+.filterBox{
+    position: fixed;
+    left: -280px;
+    top: 0;
+    height: 100%;
+    height: 100vh;
+    display: block !important;
+    z-index: 9999;
+    width: 274px;
+    background: #FEFDFD;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    box-shadow: 0 0 5px rgb(0 0 0 / 50%);
+}
+.filterBox .filterHeader{
+    padding: 5px 10px;
+    text-align: right;
+}
+.filterBox .filterHeader button{
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    font-size: 23px;
+    color: #FD0000;
+}
+.filterBox .filterCategory{
+    padding: 0px 20px;
+}
+.filterBox .filterCategory h4{
+    text-align: right;
+    font-size: 24px;
+    color: #343337;
+    font-family: Segeo-Bold;
+    margin-bottom: 15px;
+}
+.filterBox .filterCategory p{
+    text-align: right;
+    font-family: Segeo-Semi;
+    margin-bottom: 0px;
+}
+.filterBox .filterCategory .catlist_item li{
+    width: 100%;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 0px;
+    border-bottom: 0px;
+    padding: 10px 0px 0px;
+}
+
+.filterBox .filterCategory .catlist_item li label{
+    margin-bottom: 0px;
+    margin-right: 10px;
+    font-family: Segeo-Semi;
+    font-size: 16px;
+}
+.filterBox .filterCategory .catlist_item li input[type=checkbox]{
+    width: 16px;
+    height: 16px;
+    position: relative;
+    opacity: 1;
+}
+.filterBox .filterCategory .catlist_item li input[type="checkbox"]:before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    position: absolute;
+    border: 1px solid #fd1d54;
+    border-radius: 3px;
+    opacity: 1;
+}
+.filterBox .filterCategory .catlist_item li input[type="checkbox"]:checked:after{
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: #fd1d54;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    border-radius: 2px;
 }

@@ -523,16 +523,15 @@ section {
 }
 
 .inner_banner_sec {
-    min-height: 310px;
+    min-height: 200px;
     background-color: #7a349c;
-    margin-bottom: 50px;
     overflow: hidden;
 }
 
 .innerbanner_cap {
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 40%;
     width: 100%;
     transform: translate(0, -50%);
 }
@@ -827,15 +826,10 @@ ul.Popular-tag.filter-tag li a {
 
     letter-spacing: 9.85px;
 
-    position: absolute;
-
-    top: 50%;
-
     margin: 0 auto;
 
     width: 100%;
 
-    transform: translateY(-50%);
 }
 
 .breadcrumb {
@@ -956,7 +950,6 @@ ul.Popular-tag.filter-tag li a {
 
 .pro_img_box {
     position: relative;
-    overflow: hidden;
 }
 
 .add_cart {

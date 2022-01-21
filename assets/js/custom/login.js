@@ -258,3 +258,4 @@ $(".mobileHeader button").click(function(){
     $(".hdr_main .navbar-collapse").removeClass("show")
   }
 })
+

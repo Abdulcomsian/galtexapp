@@ -939,3 +939,10 @@ $('body').on('click','button.cancel-order',function(){
   });
 
 });
+
+$(".filterBox .filterHeader button").click(function(){
+  $(".filterBox").css("left","-280px")
+})
+$(".filterIconBtn").click(function(){
+  $(".filterBox").css("left","0px")
+})
