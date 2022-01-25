@@ -247,6 +247,7 @@
     <script src="<?php echo base_url(); ?>assets/js/toastr.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/sweetalert2.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
    <!--  Error & Success Messages -->
    <script type="text/javascript">
@@ -269,6 +270,17 @@
     var cancel_order_sure = "<?php echo lang('cancel_order_sure'); ?>";
     var confirmButtonText = "<?php echo lang('yes'); ?>";
     var cancelButtonText = "<?php echo lang('no'); ?>";
+   </script>
+   <script>
+      $('.sliderProduct').slick({
+         slidesToShow: 1,
+         slidesToScroll: 1,
+         autoplay: false,
+         autoplaySpeed: 2000,
+         centerMode: true,
+         focusOnSelect: true,
+         arrows: false,
+      });
    </script>
   </body>
 </html>

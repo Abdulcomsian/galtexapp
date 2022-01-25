@@ -30,6 +30,8 @@ $language = $this->session->userdata('language');
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/toastr.min.css">
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/sweetalert2.min.css">
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
       <title><?php echo SITE_NAME; ?> :: <?php echo @$title; ?></title>
       <style type="text/css">
          /** theme color update start**/
@@ -189,7 +191,111 @@ $language = $this->session->userdata('language');
                                 <?php } } ?>
                             </ul>
                   </div>
+                 
                </div>
+               <div class="blurEffect">
+               <div class="shoppingCart">
+                     <div class="headerCart">
+                        <img src="<?php echo base_url(); ?>uploads/company/<?php echo $this->session->all_userdata()['webuserdata']['client_configs']['company_logo']; ?>">
+                        <button>
+                           Close
+                        </button>
+                     </div>
+                     <div class="cartList">
+                        <h4>Shopping Cart</h4>
+                        <ul>
+                           <li>
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                              <div class="itemCart">
+                                 <div class="itemDetail">
+                                    <h5>Name of Product</h5>
+                                    <p>
+                                       <span>30 ml</span>
+                                       <span>x1</span>
+                                    </p>
+                                 </div>
+                                 <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" />
+                              </div>
+                           </li>
+                           <li>
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                              <div class="itemCart">
+                                 <div class="itemDetail">
+                                    <h5>Name of Product</h5>
+                                    <p>
+                                       <span>30 ml</span>
+                                       <span>x1</span>
+                                    </p>
+                                 </div>
+                                 <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" />
+                              </div>
+                           </li>
+                           <li>
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                              <div class="itemCart">
+                                 <div class="itemDetail">
+                                    <h5>Name of Product</h5>
+                                    <p>
+                                       <span>30 ml</span>
+                                       <span>x1</span>
+                                    </p>
+                                 </div>
+                                 <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" />
+                              </div>
+                           </li>
+                           <li>
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                              <div class="itemCart">
+                                 <div class="itemDetail">
+                                    <h5>Name of Product</h5>
+                                    <p>
+                                       <span>30 ml</span>
+                                       <span>x1</span>
+                                    </p>
+                                 </div>
+                                 <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" />
+                              </div>
+                           </li>
+                           <li>
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                              <div class="itemCart">
+                                 <div class="itemDetail">
+                                    <h5>Name of Product</h5>
+                                    <p>
+                                       <span>30 ml</span>
+                                       <span>x1</span>
+                                    </p>
+                                 </div>
+                                 <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" />
+                              </div>
+                           </li>
+                           <li>
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                              <div class="itemCart">
+                                 <div class="itemDetail">
+                                    <h5>Name of Product</h5>
+                                    <p>
+                                       <span>30 ml</span>
+                                       <span>x1</span>
+                                    </p>
+                                 </div>
+                                 <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" />
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="cartTotal">
+                        <ul>
+                           <li>95,595 ml</li>
+                           <li>15 items</li>
+                           <li>Total</li>
+                        </ul>
+                     </div>
+                     <button class="continuePayment">
+                     Continue to payment
+                     </button>
+                  </div>
+                  </div>
             </nav>
          </div>
        

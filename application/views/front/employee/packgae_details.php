@@ -1,10 +1,38 @@
 <main class="main_content">
-   <section class="inner_banner_sec">
-      <div class="innerbanner_cap text-center">
+   <div class="addToCartDiv desktopHide">
+   <?php if($details['remaining_quantity'] > 0) { ?>
+          <div class="quantity_box">
+             <label><?php echo lang('quantity'); ?></label>
+             <div class="quantity">
+                <input class="touch-spin-count-ver" readonly type="text" value="<?php echo $quantity; ?>" name="pro_quantity">
+             </div>
+          </div>
+      <?php } if($is_added_into_cart) { ?>
+         <div class="wow zoomIn"><a href="../../employees/cart" style="margin-bottom:10px;" class="btn btn_common"><?php echo lang('go_to_cart'); ?></a></div>
+      <?php } else { ?>
+         <?php if($details['remaining_quantity'] > 0) { ?>
+            <div class="wow zoomIn"><a href="javascript:void(0);" data-type="package" data-guid="<?php echo $details['package_guid']; ?>" style="margin-bottom:10px;" class="btn btn_common add-to-cart"><?php echo lang('add_to_cart'); ?></a></div>
+         <?php } else { ?>
+            <strong><a href="javascript:void(0);" style="margin-top:10px;color:red;"><?php echo lang('out_of_stock'); ?></a></strong>
+      <?php } } ?>
+   </div>
+   <div class="backToStore desktopHide">
+   <div class="wow zoomIn"><a href="../../employees/products" class="btn btn_common"><?php echo lang('back_to_store'); ?></a></div>
+   </div>
+   <section class="inner_banner_sec packageHeader">
+      <div class="innerbanner_cap text-center mobileCap">
          <div class="container">
             <div class="watermark_text">
-               <h1 class="head_1"><?php echo $details['package_name']; ?></h1>
-               <p class="watermark wow zoomIn" data-wow-delay="0.4s"><?php echo lang('packages'); ?></p>
+           
+               <h1 class="head_1 mobileHide"><?php echo $details['package_name']; ?></h1>
+               <p class="watermark wow zoomIn mobileHide" data-wow-delay="0.4s"><?php echo lang('packages'); ?></p>
+                   <!-- CUSTOM PRODUCT NAME -->
+                   <h1 class="product_name wow bounce"><?php echo $product['product_name']; ?>Lorem ipsum dolar sit amet, <br> consectetur adipiscing elit.</h1>
+               <!-- END - CUSTOM CODE -->
+            </div>
+            <div class="tagDiv">
+               <p href="">Additional costs</p>
+               <p href="">Pack</p>
             </div>
          </div>
       </div>
@@ -12,7 +40,8 @@
 
    <?php foreach($details['products']['data']['records'] as $product) { ?>
      <div class="single_product_page">
-        <div class="container">
+     <div class="productDiv"> 
+         <div class="container">
           <div class="row">
              <div class="col-md-6 wow fadeInUp">
                 <div class="single_slider_main clearfix">
@@ -80,7 +109,9 @@
           </div>
 
         </div>
+       
       </div>
+      </div>  
       <div class="singleprod-devider"></div>
     <?php } ?>
     <center>

@@ -1,0 +1,10 @@
+<svg id="Hamburger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23.121" height="23.621" viewBox="0 0 23.121 23.621">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.046" y1="0.67" x2="1.349" y2="0.632" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fd0000"/>
+      <stop offset="1" stop-color="#fd44c6"/>
+    </linearGradient>
+  </defs>
+  <path id="Path_15" data-name="Path 15" d="M1.061,22.061l-2.121-2.121,21-21,2.121,2.121Z" transform="translate(1.061 1.061)" fill="url(#linear-gradient)"/>
+  <path id="Path_16" data-name="Path 16" d="M19.939,22.061l-21-21L1.061-1.061l21,21Z" transform="translate(1.061 1.561)" fill="url(#linear-gradient)"/>
+</svg>

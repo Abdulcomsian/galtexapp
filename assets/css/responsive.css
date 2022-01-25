@@ -16,6 +16,9 @@
 }
 
 @media (max-width: 991px) {
+	.single_product_page{
+		padding: 20px 0px !important;
+	}
 	.mobileHeader.hdr_main .navbar-toggler{
 		top: 40% !important;
 	}
@@ -222,12 +225,53 @@
 }
 
 @media (max-width: 767px) {
+	.mobileCap{
+		bottom: 0%;
+		top: initial;
+		transform: initial;
+	}
+	.innerbanner_cap.mobileCap h1{
+		text-transform: initial;
+		font-size: 22px;
+	}
+	.packageHeader{
+		background-color: #fff !important;
+	}
+	.single_product_page{
+		border-radius: 20px 20px 0px 0px;
+		background: #fff;
+		position: relative;
+		top: -14px;
+	}
+	.sliderProduct{
+		display: block !important;
+	}
+	.btn_common{
+		font-size: 10px;
+	}
+	.inner_banner_sec.productBg{
+		background-image: url(http://localhost/galtexapp/uploads/products/1640631145-6e03ea60-de24-a971-be96-d34787a34684.jpg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		width: 100%;
+	}
+	.inner_banner_sec.productBg .watermark{
+		display: none;
+	}
 	.pro_img_box .productPrice {
 		left: 39% !important;
 	}
 
-	.innerbanner_cap {
-		top: 30%;
+	.productBg .innerbanner_cap {
+		bottom: 0%;
+		right: -60px;
+		left: initial;
+		top: initial;
+		transform: inherit;
+	}
+	.productBg .innerbanner_cap .watermark_text h1{
+		color: #000;
 	}
 
 	.login-form {
