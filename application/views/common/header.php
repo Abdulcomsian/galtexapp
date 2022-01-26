@@ -29,6 +29,9 @@ $language = $this->session->userdata('language');
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/nprogress.css">
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/toastr.min.css">
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/sweetalert2.min.css">
+      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
       <title><?php echo SITE_NAME; ?> :: <?php echo @$title; ?></title>
       <style type="text/css">
          /** theme color update start**/
@@ -78,7 +81,7 @@ $language = $this->session->userdata('language');
    <body>
       
       <header class="header_sec">
-         <div class="hdr_top_bar">
+         <!-- <div class="hdr_top_bar">
             <div class="container">
                <div class="row align-items-center">
                   <div class="col-6">
@@ -100,15 +103,16 @@ $language = $this->session->userdata('language');
                   </div>
                </div>
             </div>
-         </div>
+         </div> -->
          <div class="hdr_main">
             <nav class="navbar navbar-expand-lg">
                <div class="container">
+                  <a href="<?php echo base_url(); ?>" class="companyLogo desktopHide">  <img src="<?php echo base_url(); ?>uploads/company/<?php echo $company_logo; ?>" alt="logo" style="height:60px;"></a>
                   <div class="logo_main">
                      <a href="<?php echo base_url(); ?>">  <img src="<?php echo base_url(); ?>uploads/company/<?php echo $company_logo; ?>" alt="logo" style="height:60px;"></a>
                   </div>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
+                     <img src="<?php echo base_url(); ?>assets/images/menu.png" alt="">
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                      <ul class="navbar-nav ml-auto">
@@ -129,7 +133,7 @@ $language = $this->session->userdata('language');
                   </div>
                   <div class="mobile_toggle_area"></div>
                   <ul class="nav_right">
-                     <li class="list-inline-item user_item">
+                     <li class="list-inline-item user_item mobileHide">
                         <a href="javascript:void(0);" class="userdd_open"><img src="<?php echo base_url(); ?>assets/images/icon_user.svg"></a>
                         <ul class="dropdown-hover">
                            <li>
@@ -143,6 +147,9 @@ $language = $this->session->userdata('language');
                               </a>
                            </li>
                         </ul>
+                     </li>
+                     <li class="list-inline-item desktopHide filterIconBtn">
+                        <i class="fa fa-filter" aria-hidden="true"></i>
                      </li>
                      <?php if(!empty($this->cart->contents())) { ?>
                         <li class="list-inline-item">
@@ -161,6 +168,135 @@ $language = $this->session->userdata('language');
                      <?php } ?>
                   </ul>
                </div>
+               <div class="filterBox">
+                  <div class="filterHeader">
+                     <div class="closingBtn">
+                        <button>
+                           <i class="fa fa-times" aria-hidden="true"></i>
+                        </button>
+                     </div>
+                  </div>
+                  <div class="filterCategory">
+                     <h4>Filter by categories</h4>
+                     <p>Category</p>
+                     <ul class="list-unstyled catlist_item">
+                                <?php if($categories['data']['total_records']) { foreach($categories['data']['records'] as $category) { ?>
+                                <li class="wow fadeInLeft" data-wow-delay="0.3s">
+                                    <label for="category_<?php echo $category['category_guid']; ?>">
+                                       <?php echo $category['category_name']; ?>
+                                    </label>    
+                                    <input type="checkbox" id="category_<?php echo $category['category_guid']; ?>" name="main_category[]" value="<?php echo $category['category_guid']; ?>" <?php if(in_array($category['category_guid'], $main_categories)) echo "checked"; ?> class="main_categories" />
+                                    
+                                </li>
+                                <?php } } ?>
+                            </ul>
+                  </div>
+                 
+               </div>
+               <div class="blurEffect">
+               <div class="shoppingCart">
+                     <div class="headerCart">
+                        <img src="<?php echo base_url(); ?>uploads/company/<?php echo $this->session->all_userdata()['webuserdata']['client_configs']['company_logo']; ?>">
+                        <button>
+                           Close
+                        </button>
+                     </div>
+                     <div class="cartList">
+                        <h4>Shopping Cart</h4>
+                        <ul>
+                           <li>
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                              <div class="itemCart">
+                                 <div class="itemDetail">
+                                    <h5>Name of Product</h5>
+                                    <p>
+                                       <span>30 ml</span>
+                                       <span>x1</span>
+                                    </p>
+                                 </div>
+                                 <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" />
+                              </div>
+                           </li>
+                           <li>
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                              <div class="itemCart">
+                                 <div class="itemDetail">
+                                    <h5>Name of Product</h5>
+                                    <p>
+                                       <span>30 ml</span>
+                                       <span>x1</span>
+                                    </p>
+                                 </div>
+                                 <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" />
+                              </div>
+                           </li>
+                           <li>
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                              <div class="itemCart">
+                                 <div class="itemDetail">
+                                    <h5>Name of Product</h5>
+                                    <p>
+                                       <span>30 ml</span>
+                                       <span>x1</span>
+                                    </p>
+                                 </div>
+                                 <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" />
+                              </div>
+                           </li>
+                           <li>
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                              <div class="itemCart">
+                                 <div class="itemDetail">
+                                    <h5>Name of Product</h5>
+                                    <p>
+                                       <span>30 ml</span>
+                                       <span>x1</span>
+                                    </p>
+                                 </div>
+                                 <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" />
+                              </div>
+                           </li>
+                           <li>
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                              <div class="itemCart">
+                                 <div class="itemDetail">
+                                    <h5>Name of Product</h5>
+                                    <p>
+                                       <span>30 ml</span>
+                                       <span>x1</span>
+                                    </p>
+                                 </div>
+                                 <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" />
+                              </div>
+                           </li>
+                           <li>
+                              <i class="fa fa-times" aria-hidden="true"></i>
+                              <div class="itemCart">
+                                 <div class="itemDetail">
+                                    <h5>Name of Product</h5>
+                                    <p>
+                                       <span>30 ml</span>
+                                       <span>x1</span>
+                                    </p>
+                                 </div>
+                                 <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" />
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="cartTotal">
+                        <ul>
+                           <li>95,595 ml</li>
+                           <li>15 items</li>
+                           <li>Total</li>
+                        </ul>
+                     </div>
+                     <button class="continuePayment">
+                     Continue to payment
+                     </button>
+                  </div>
+                  </div>
             </nav>
          </div>
+       
       </header>

@@ -256,5 +256,11 @@ $("#help-form").submit(function(event) {
 $(".mobileHeader button").click(function(){
   if($(".hdr_main .navbar-collapse").hasClass("show")){
     $(".hdr_main .navbar-collapse").removeClass("show")
+    $(".main_content").removeClass("blurMe")
+    $(".navbar-toggler").css("filter","blur(0px)")
   }
+})
+$(".navbar-toggler").click(function(){
+  $(".main_content").addClass("blurMe")
+  $(this).css("filter","blur(10px)")
 })

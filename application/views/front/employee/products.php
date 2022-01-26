@@ -1,18 +1,25 @@
 <main class="main_content">
-    <section class="inner_banner_sec">
-        <div class="innerbanner_cap text-center">
-            <div class="container">
-                <div class="watermark_text">
-                    <!-- <h1 class="head_1"><?php echo lang('products'); ?></h1> -->
-                    <p class="watermark wow zoomIn" data-wow-delay="0.4s"><?php echo $this->session->userdata('webuserdata')['client_configs']['shop_title']; ?></p>
+    <div class="cardBlur">
+    <section id="card">
+        <div class="inner_banner_sec">
+            <div class="innerbanner_cap text-center">
+                <div class="container">
+                    <div class="watermark_text">
+                        <!-- <h1 class="head_1"><?php echo lang('products'); ?></h1> -->
+                        <p class="watermark wow zoomIn" data-wow-delay="0.4s"><?php echo $this->session->userdata('webuserdata')['client_configs']['shop_title']; ?></p>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="welcomeText">
+                        <p>Welcome User!,<br> You are welcome to pick the present that best suits you.<br> You are even able to upgrade it if you want.</p>
+                    </div>
     </section>
+    </div>
     <div class="content_main_sec">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4 col-lg-4 col-xl-3">
+                <div class="col-md-4 col-lg-4 col-xl-3 mobileHide">
                     <div class="cat_sidebar">
                         <div class="sidebar_block">
                             <h4 class="sidebar_head wow fadeInDown"><?php echo lang('budget_categories'); ?></h4>
@@ -63,7 +70,7 @@
                                 </div>
                             <?php } ?>
                             <?php foreach($packages['data']['records'] as $package) { ?>
-                                <div class="prod_coll col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="prod_coll col-xs-6 col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                                     <div class="proimage">
                                         <div class="pro_img_box pro_package_slider">
                                             <?php foreach($package['products']['data']['records'] as $package_product) { ?>
@@ -111,10 +118,11 @@
                             <h2 class="head_common2 wow fadeInRight"><?php echo lang('products'); ?> (<?php echo addZero(@$within_the_budget_products['data']['total_records'] + @$above_the_budget_products['data']['total_records']); ?>)</h2>
                         </div>
                         <?php foreach($within_the_budget_products['data']['records'] as $product) { ?>
-                            <div class="prod_coll col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="prod_coll col-xs-6 col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
                                 <div class="proimage">
                                     <div class="pro_img_box">
                                         <a href="<?php echo base_url(); ?>product/details/<?php echo $product['product_guid']; ?>"><img src="<?php echo $product['product_main_photo']; ?>" /></a>
+                                        <!-- <a href="<?php echo base_url(); ?>product/details/<?php echo $product['product_guid']; ?>"><img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" /></a> -->
                                         <div class="hover_box">
                                             <?php $product_cart = is_product_into_cart($product['product_guid']); if($product_cart['is_added_into_cart'] > 0) { ?>
                                                 <a href="../employees/cart" class="add_cart"><?php echo lang('go_to_cart'); ?></a>
@@ -132,16 +140,25 @@
                                             
                                             <?php } ?>
                                         </div>
+                                        <p class="productPrice">
+                                            200USD
+                                        </p>
                                     </div>
                                     <div class="pro_bottom clerfix">
                                         <div class="product_name">
                                             <a href="<?php echo base_url(); ?>product/details/<?php echo $product['product_guid']; ?>"><?php echo $product['product_name']; ?></a>
                                         </div>
-                                        <div class="product_price">
+                                        <div class="product_description">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus enim non mattis.</p>
+                                        </div>
+                                        <!-- <div class="product_price">
                                             <p><?php echo $product['category_name']; ?> </p>
                                             <?php if($product['remaining_quantity'] < REMAINING_PRODUCTS_QUANTITY_LIMIT) { ?>
                                                 <p><?php echo lang('remaining_quantity'); ?> <?php echo $product['remaining_quantity']; ?> </p>
                                             <?php } ?>
+                                        </div> -->
+                                        <div class="readMore">
+                                            <a href="<?php echo base_url(); ?>product/details/<?php echo $product['product_guid']; ?>"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> More Details</a>
                                         </div>
                                     </div>
                                 </div>
@@ -152,6 +169,7 @@
                                 <div class="proimage">
                                     <div class="pro_img_box">
                                         <a href="<?php echo base_url(); ?>product/details/<?php echo $product['product_guid']; ?>"><img src="<?php echo $product['product_main_photo']; ?>" /></a>
+                                        <!-- <a href="<?php echo base_url(); ?>product/details/<?php echo $product['product_guid']; ?>"><img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" /></a> -->
                                         <div class="hover_box">
                                             <?php $product_cart = is_product_into_cart($product['product_guid']); if($product_cart['is_added_into_cart'] > 0) { ?>
                                                 <a href="../employees/cart" class="add_cart"><?php echo lang('go_to_cart'); ?></a>
@@ -163,16 +181,25 @@
                                                 <a href="javascript:void(0);" style="color:red;" class="add_cart"><?php echo lang('out_of_stock'); ?></a>
                                             <?php } } ?>
                                         </div>
+                                        <p class="productPrice">
+                                            200USD
+                                        </p>
                                     </div>
                                     <div class="pro_bottom clerfix">
                                         <div class="product_name">
                                             <a href="<?php echo base_url(); ?>product/details/<?php echo $product['product_guid']; ?>"><?php echo $product['product_name']; ?></a>
                                         </div>
-                                        <div class="product_price">
+                                        <div class="product_description">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus enim non mattis.</p>
+                                        </div>
+                                        <!-- <div class="product_price">
                                             <p><?php echo $product['category_name']; ?> (+ <?php echo CURRENCY_SYMBOL.$product['above_budget_price']; ?>) </p>
                                             <?php if($product['remaining_quantity'] < REMAINING_PRODUCTS_QUANTITY_LIMIT) { ?>
                                                 <p><?php echo lang('remaining_quantity'); ?> <?php echo $product['remaining_quantity']; ?> </p>
                                             <?php } ?>
+                                        </div> -->
+                                        <div class="readMore">
+                                        <a href="<?php echo base_url(); ?>product/details/<?php echo $product['product_guid']; ?>"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> More Details</a>
                                         </div>
                                     </div>
                                 </div>
