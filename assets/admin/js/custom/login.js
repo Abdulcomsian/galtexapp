@@ -234,6 +234,7 @@ $("#reset-password-form").submit(function(event) {
               $('.reset-password-btn').attr('disabled',true).text(loading);
             },       
             success: function(resp){
+              console.log(resp);return false; 
              if(resp.status == 200){
                 $('#reset-password-form')[0].reset();
                 showToaster('success','Success',resp.message);

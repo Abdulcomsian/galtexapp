@@ -58,7 +58,13 @@
 	}
 
 	.ftr_main_block {
-		padding-bottom: 30px;
+		/*padding-bottom: 10px;*/
+	}
+	section.footer_top{
+		padding: 15px 0;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
 	}
 
 	.hdr_main .container {

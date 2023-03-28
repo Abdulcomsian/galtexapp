@@ -78,8 +78,8 @@ $db['default'] = array(
     'dsn' => '',
     'hostname' => 'localhost',
     'username' => 'root',
-    'password' => 'root',
-    'database' => 'galtex-app',
+    'password' => '',
+    'database' => 'galtex_db',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => FALSE,
@@ -97,8 +97,8 @@ $db['default'] = array(
 );
 switch (ENVIRONMENT) {
     case 'local':
-        $db['default']['username'] = 'sorav';
-        $db['default']['password'] = 'root@123';
+        $db['default']['username'] = 'root';
+        $db['default']['password'] = '';
         break;
     case 'testing':
         $db['default']['username'] = 'root';

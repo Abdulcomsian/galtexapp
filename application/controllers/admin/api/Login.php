@@ -21,6 +21,8 @@ class Login extends API_Controller {
         /* Validation - ends */
 
         $user_data = $this->Users_model->get_users('user_id,is_admin,user_status,user_type_guid,user_type_id', array('login_keyword' => $this->Post['email'], 'password' => $this->Post['password']));
+      
+        $this->Return['data'] =  $user_data;
         if (!$user_data) {
             $this->Return['status'] = 500;
             $this->Return['message'] = lang('invalid_credentials');

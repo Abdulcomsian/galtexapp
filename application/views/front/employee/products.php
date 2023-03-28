@@ -4,9 +4,9 @@
         <div class="inner_banner_sec">
             <div class="innerbanner_cap text-center">
                 <div class="container">
-                    <div class="watermark_text">
+                    <div class="watermark_text rounded">
                         <!-- <h1 class="head_1"><?php echo lang('products'); ?></h1> -->
-                        <p class="watermark wow zoomIn" data-wow-delay="0.4s"><?php echo $this->session->userdata('webuserdata')['client_configs']['shop_title']; ?></p>
+                        <p class="watermark wow zoomIn text-white" data-wow-delay="0.4s"><?php echo $this->session->userdata('webuserdata')['client_configs']['shop_title']; ?></p>
                     </div>
                 </div>
             </div>

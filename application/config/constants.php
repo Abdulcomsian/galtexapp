@@ -123,7 +123,7 @@ switch (ENVIRONMENT)
   case 'local':
     /*Paths*/
     define('SITE_HOST', 'http://localhost/');
-    define('ROOT_FOLDER', 'galtex-app/');
+    define('ROOT_FOLDER', 'galtex/');
 
     /*Site Related Settings*/
     define('ADMIN_SAVE_LOG', false);
