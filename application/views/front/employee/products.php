@@ -1,4 +1,11 @@
 <main class="main_content">
+    <div class="card m-4 py-3 px-1">
+        <div class="timerClock text-start d-flex flex-row-reverse">
+            <strong><h5 class="d-flex flex-column mx-1"><span id="days" class="text-center">00</span><span>Day</span></h5></strong>
+            <strong><h5 class="d-flex flex-column mx-1"><span id="hours" class="text-center">00</span><span>Hour</span></h5></strong>
+            <strong><h5 class="d-flex flex-column mx-1"><span id="minutes" class="text-center">00</span><span>Minute</span></h5></strong>
+        </div>
+    </div>
     <div class="cardBlur">
     <section id="card">
         <div class="inner_banner_sec">
@@ -227,3 +234,69 @@
         </div>
     </div>
 </main>
+<script>
+    
+    var timeIntervalIds = [];
+    convertTime();
+   
+   function convertTime()
+   {
+        let deadlineTime = "<?=$client_information['deadline']?>";
+        timeInSeconds = convertTimeIntoSeconds(deadlineTime);
+        setTimerInterval(timeInSeconds);
+   }
+
+
+    function convertTimeIntoSeconds(timeString)
+    {
+        const totalSeconds = new Date(timeString).getTime();
+        return totalSeconds;
+    }
+
+
+   function setTimerInterval(timeInSeconds)
+    {
+     
+        var x = setInterval(function() {
+        // Get today's date and time
+        var now = new Date().getTime();
+        // Find the distance between now and the count down date
+        var distance = timeInSeconds - now;
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        days = days < 10 ? "0"+days : days;
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        hours = hours < 10 ? "0"+hours : hours;
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        minutes = minutes < 10 ? "0"+minutes : minutes;
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        seconds = seconds < 10 ?  "0"+seconds : seconds
+        // Display the result in the element with id="demo"
+
+        // clockTime =  hours == "00" ? minutes + ":" + seconds : hours + ":"+ minutes + ":" + seconds;
+        clockTime =  days == "00" ? hours + ":" + minutes : days +":"+ hours + ":"+ minutes ;
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        // document.querySelector("#time").innerHTML = clockTime;
+
+        
+        // If the count down is finished, write some text
+        if (distance < 0) {
+            document.querySelector("#time").innerHTML = "00:00:00";
+            clearAllTimeInterval()
+        }
+
+        }, 1000);
+
+        timeIntervalIds.push(x);
+    }
+
+    function clearAllTimeInterval()
+    {
+        timeIntervalIds.forEach(time => {
+            clearInterval(time);
+        })
+    }
+
+</script>

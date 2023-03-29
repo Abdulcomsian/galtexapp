@@ -29,19 +29,19 @@ class Employees extends Web_Controller_Secure {
 
         /* Get Categories */
         $data['categories'] = $this->Categories_model->get_categories('category_name',array('order_by' => 'category_name', 'sequence' => 'ASC'),TRUE);
-
+        
         /* Filter Budget Categories */
         $data['budget_categories'] = array('within','above');
         if(!empty($this->input->get('budget_categories'))){
             $data['budget_categories'] = explode(",", $this->input->get('budget_categories'));
         }
-
+        
         /* Filter Main Categories */
         $data['main_categories'] = array();
         if(!empty($this->input->get('main_categories'))){
             $data['main_categories'] = explode(",", $this->input->get('main_categories'));
         }
-
+       
         /* Get Shop Products */
         $data['within_the_budget_products'] = $data['above_the_budget_products'] = $data['packages'] = array();
         if(in_array('within',$data['budget_categories'])){
@@ -50,10 +50,13 @@ class Employees extends Web_Controller_Secure {
             /* Get Packages */
             $data['packages'] = $this->Shop_model->get_packages('package_name,no_of_products,products,product_ids,remaining_quantity',array('client_id' => $this->client_id, 'client_status' => 'Liked'),TRUE);
         }
-
+        
         if(in_array('above',$data['budget_categories'])){
             $data['above_the_budget_products'] = $this->Shop_model->get_shop_products('product_name,category_name,product_main_photo,product_guid,above_budget_price,remaining_quantity',array('shop_category' => 'Above Budget', 'client_id' => $this->client_id, 'client_status' => 'Liked', 'main_categories' => $data['main_categories'], 'order_by' => 'shop_product_id', 'sequence' => 'RANDOM'),TRUE);
         }
+
+        $data['client_information'] = $this->Users_model->get_users('user_id,is_admin,user_status,user_type_guid,user_type_id,user_image,first_name,last_name,client_id,client_deadline,email,deadline', array('user_id' => $this->client_id));
+       
 		$this->layout->load('default','front/employee/products',$data);
 	} 
 
